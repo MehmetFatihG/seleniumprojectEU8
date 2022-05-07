@@ -1,10 +1,10 @@
-package com.cydeo.tests.day1_selenium_intro;
+package com.cydeo.tests.day2_Locators_GetText_GetAttribute;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Task1_YahooTitleVerification {
+public class T1_CydeoVerifications {
     public static void main(String[] args) {
 
         WebDriverManager.chromedriver().setup();
@@ -13,20 +13,14 @@ public class Task1_YahooTitleVerification {
 
         driver.manage().window().maximize();
 
-        driver.get("https://www.yahoo.com");
+        driver.get("https://practice.cydeo.com");
+
+        System.out.println(driver.getCurrentUrl());
 
         System.out.println(driver.getTitle());
 
-        driver.close();
+
+
 
     }
-
-
 }
-/*
-TC #1: Yahoo Title Verification
-1.Open Chrome browser
-2.Go to https://www.yahoo.com
-3.Verify title:
-Expected: Yaho
- */
