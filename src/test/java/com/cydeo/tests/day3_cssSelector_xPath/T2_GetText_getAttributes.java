@@ -1,10 +1,10 @@
-package com.cydeo.tests.day3_CssSelector_Xpath;
+package com.cydeo.tests.day3_cssSelector_xPath;
 
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class T2_GetText_GetAttributes {
+public class T2_GetText_getAttributes {
     public static void main(String[] args) {
 
         //1- Open a chrome browser

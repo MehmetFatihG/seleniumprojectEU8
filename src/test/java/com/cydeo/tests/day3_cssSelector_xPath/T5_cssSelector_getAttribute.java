@@ -1,11 +1,11 @@
-package com.cydeo.tests.day3_CssSelector_Xpath;
+package com.cydeo.tests.day3_cssSelector_xPath;
 
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class T5_CssSelector_GetAttribute {
+public class T5_cssSelector_getAttribute {
     public static void main(String[] args) {
         //1- Open a chrome browser
         WebDriver driver = WebDriverFactory.getDriver("chrome");
