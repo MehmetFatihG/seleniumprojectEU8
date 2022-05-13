@@ -3,7 +3,7 @@ package com.cydeo.tests.day5_testNGIntro_dropdowns;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class TestNGIntro {
+public class TestNG_Intro {
 
     @BeforeClass
     public void setupMethod(){
