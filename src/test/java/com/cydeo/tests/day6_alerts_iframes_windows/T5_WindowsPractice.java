@@ -41,7 +41,7 @@ public class T5_WindowsPractice {
         clickHereButton.click();
 
         //6. Switch to new Window.
-        Set<String> allElements = (driver.getWindowHandles());
+        Set<String> allElements = driver.getWindowHandles();
         for(String each : allElements){
            driver.switchTo().window(each);
         }
