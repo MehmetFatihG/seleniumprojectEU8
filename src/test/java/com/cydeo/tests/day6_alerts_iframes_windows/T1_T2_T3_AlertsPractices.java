@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -22,16 +21,6 @@ public class T1_T2_T3_AlertsPractices {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    @AfterMethod
-    public void tearDown(){
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        driver.close();
     }
 
     @Test
@@ -55,4 +44,47 @@ public class T1_T2_T3_AlertsPractices {
         Assert.assertEquals(actualText,expectedText);
 
     }
+
+    @Test
+    public void AlertsPracticeTast2(){
+        //1. Open browser
+        //2. Go to website: http://practice.cydeo.com/javascript_alerts
+        driver.get("http://practice.cydeo.com/javascript_alerts");
+
+        //3. Click to “Click for JS Confirm” button
+        WebElement JSConfirmButton = driver.findElement(By.xpath("//button[.='Click for JS Confirm']"));
+        JSConfirmButton.click();
+
+        //4. Click to OK button from the alert
+        Alert alert =  driver.switchTo().alert();
+        alert.accept();
+
+        //5. Verify “You clicked: Ok” text is displayed.
+        WebElement text = driver.findElement(By.xpath("//p[@id='result']"));
+        Assert.assertTrue(text.isDisplayed());
+    }
+
+    @Test
+    public void Alertspractices_task3(){
+        //1. Open browser
+        //2. Go to website: http://practice.cydeo.com/javascript_alerts
+        driver.get("http://practice.cydeo.com/javascript_alerts");
+
+        //3. Click to “Click for JS Prompt” button
+        WebElement promptButton = driver.findElement(By.xpath("//button[.='Click for JS Prompt']"));
+        promptButton.click();
+
+        //4. Send “hello” text to alert
+        Alert alert = driver.switchTo().alert();
+        alert.sendKeys("hello");
+
+        //5. Click to OK button from the alert
+        alert.accept();
+
+        //6. Verify “You entered: hello” text is displayed
+        WebElement text = driver.findElement(By.xpath("//p[@id='result']"));
+        Assert.assertTrue(text.isDisplayed());
+
+    }
+
 }
