@@ -33,4 +33,16 @@ public class WebTableUtils {
         Assert.assertEquals(actualDate, expectedOrderDate);
     }
 
+    public static void getTableGetEmail(WebDriver driver, String tableNum, String firstName){
+
+        WebElement emails = driver.findElement(By.xpath("//table[@id='table"+tableNum+"']//td[.='"+firstName+"']/following-sibling::td[1]"));
+        System.out.println("email of " +firstName+ " = " + emails.getText());
+    }
+/*3- Write custom method:
+• Method name: getTableGetEmail()
+• Return type: void
+• Arg1: WebDriver driver
+• Arg2: String tableNum
+• Arg3: String firstName
+ */
 }
