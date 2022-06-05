@@ -8,6 +8,7 @@ public class ConfigurationReader {
 
     //1-Create the object of Properties
     private static final Properties properties = new Properties();
+
     static {
 
         try {
