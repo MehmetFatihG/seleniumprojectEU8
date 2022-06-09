@@ -1,6 +1,9 @@
 package com.cydeo.utilities;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.util.Set;
@@ -36,6 +39,13 @@ public class BrowserUtils {
     public static void verifyExpectedTitle(WebDriver driver, String expectedTitle){
 
         Assert.assertEquals(driver.getTitle(), expectedTitle);
+    }
+
+    //it waits explicitly for invisibility
+    public static void waitForInvisibilityOf(WebElement element){
+        //Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
+        wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
 
